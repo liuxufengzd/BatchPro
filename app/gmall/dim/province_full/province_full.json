@@ -1,0 +1,35 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dim",
+    "table": "province_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "base_province_full",
+      "columns": [
+        "id",
+        "name",
+        "region_id",
+        "area_code",
+        "iso_code",
+        "iso_3166_2"
+      ]
+    },
+    {
+      "table": "base_region_full",
+      "columns": [
+        "id",
+        "region_name"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "province_full"
+  }
+}

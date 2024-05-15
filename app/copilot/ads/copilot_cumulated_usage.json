@@ -1,0 +1,32 @@
+{
+  "env": {
+    "app": "office",
+    "layer": "ads",
+    "table": "copilot_cumulated_usage",
+    "scheduler": {
+      "startTime": "2024-03-20",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "copilot_td",
+      "columns": [
+        "Date",
+        "Application",
+        "TenantId",
+        "Platform",
+        "OsName",
+        "FeatureName",
+        "ActiveUsageCount"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "copilot_cumulated_usage"
+  },
+  "sink": {
+    "partitionBy": "Date"
+  }
+}

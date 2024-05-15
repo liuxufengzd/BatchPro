@@ -1,0 +1,28 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dim",
+    "table": "promotion_pos_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "promotion_pos_full",
+      "columns": [
+        "id",
+        "pos_location",
+        "pos_type",
+        "promotion_type",
+        "create_time",
+        "operate_time"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "promotion_pos_full"
+  }
+}

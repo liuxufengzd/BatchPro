@@ -1,0 +1,27 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "tool_coupon_used_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "coupon_use_inc",
+      "columns": [
+        "type",
+        "data"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "tool_coupon_used_inc"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "repeat_purchase_by_tm",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_user_sku_order_nd",
+      "columns": [
+        "user_id",
+        "tm_id",
+        "tm_name",
+        "order_count_30d"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "repeat_purchase_by_tm"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "user_login_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "log_inc",
+      "columns": [
+        "common",
+        "page",
+        "ts"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "user_login_inc"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

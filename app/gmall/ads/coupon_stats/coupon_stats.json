@@ -1,0 +1,29 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "coupon_stats",
+    "scheduler": {
+      "startTime": "2022-06-04",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "tool_user_coupon_used_1d",
+      "columns": [
+        "user_id",
+        "coupon_id",
+        "coupon_name",
+        "used_count_1d"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "coupon_stats"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

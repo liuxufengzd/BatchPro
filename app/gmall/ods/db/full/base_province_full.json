@@ -1,0 +1,50 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "base_province_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "database": "gmall",
+    "table": "base_province",
+    "schema": [
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "region_id",
+        "type": "string"
+      },
+      {
+        "name": "area_code",
+        "type": "string?"
+      },
+      {
+        "name": "iso_code",
+        "type": "string?"
+      },
+      {
+        "name": "iso_3166_2",
+        "type": "string?"
+      },
+      {
+        "name": "create_time",
+        "type": "string?"
+      },
+      {
+        "name": "operate_time",
+        "type": "string?"
+      }
+    ]
+  }
+}

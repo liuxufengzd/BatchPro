@@ -1,0 +1,30 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "order_to_pay_interval_avg",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_trade_flow_acc",
+      "layer": "dwd",
+      "columns": [
+        "order_time",
+        "payment_time",
+        "payment_date_id",
+        "finish_date_id"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "order_to_pay_interval_avg"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "trade_cart_add_inc"
+  },
+  "sources": [
+    {
+      "table": "cart_info_inc",
+      "dates": ["2022-06-08"],
+      "columns": [
+        "type",
+        "data"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_cart_add_inc_init"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

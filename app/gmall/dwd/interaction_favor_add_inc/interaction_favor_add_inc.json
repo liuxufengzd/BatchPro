@@ -1,0 +1,27 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "interaction_favor_add_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "favor_info_inc",
+      "columns": [
+        "type",
+        "data"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "interaction_favor_add_inc"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/app/gmall/ads/new_order_user_stats/new_order_user_stats.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/app/gmall/dim/sku_full/sku_full.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/app/gmall/dwd/trade_order_detail_inc/trade_order_detail_inc_init.sql" dialect="GenericSQL" />
+    <file url="PROJECT" dialect="GenericSQL" />
+  </component>
+</project>

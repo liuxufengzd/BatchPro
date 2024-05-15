@@ -1,0 +1,32 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dws",
+    "table": "trade_user_order_td"
+  },
+  "sources": [
+    {
+      "table": "trade_order_detail_inc",
+      "dates": [
+        "2022-06-04",
+        "2022-06-05",
+        "2022-06-06",
+        "2022-06-07",
+        "2022-06-08"
+      ],
+      "columns": [
+        "user_id",
+        "order_id",
+        "sku_num",
+        "split_original_amount",
+        "split_activity_amount",
+        "split_coupon_amount",
+        "split_total_amount",
+        "date_id"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_user_order_td_init"
+  }
+}

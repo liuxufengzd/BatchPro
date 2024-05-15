@@ -1,0 +1,59 @@
+{
+  "env": {
+    "local": true,
+    "layer": "dim",
+    "table": "date",
+    "compression": "snappy",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "filename": "date_info.txt",
+    "format": "text",
+    "options": {
+      "delimiter": "\t",
+      "header": false
+    },
+    "schema": [
+      {
+        "name": "date_id",
+        "type": "string?"
+      },
+      {
+        "name": "week_id",
+        "type": "string?"
+      },
+      {
+        "name": "week_day",
+        "type": "string?"
+      },
+      {
+        "name": "day",
+        "type": "string?"
+      },
+      {
+        "name": "month",
+        "type": "string?"
+      },
+      {
+        "name": "quarter",
+        "type": "string?"
+      },
+      {
+        "name": "year",
+        "type": "string?"
+      },
+      {
+        "name": "is_workday",
+        "type": "string?"
+      },
+      {
+        "name": "holiday_id",
+        "type": "string?"
+      }
+    ]
+  }
+}

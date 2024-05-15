@@ -1,0 +1,76 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "trade_pay_detail_suc_inc"
+  },
+  "sources": [
+    {
+      "table": "payment_info_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "order_detail_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "order_info_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "order_detail_activity_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "order_detail_coupon_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "base_dic_full",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "dic_code",
+        "dic_name",
+        "parent_code"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_pay_detail_suc_inc_init"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

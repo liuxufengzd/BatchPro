@@ -1,0 +1,28 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dim",
+    "table": "user_zip"
+  },
+  "sources": [
+    {
+      "table": "user_info_inc",
+      "dates": ["2022-06-08"],
+      "columns": [
+        "type",
+        "data"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "user_zip_init",
+    "udf": [
+      "encode_name",
+      "encode_phone_number",
+      "encode_email"
+    ]
+  },
+  "sink": {
+    "partitionBy": "end_date"
+  }
+}

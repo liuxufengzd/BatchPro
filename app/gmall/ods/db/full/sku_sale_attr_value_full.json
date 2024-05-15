@@ -1,0 +1,54 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "sku_sale_attr_value_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "database": "gmall",
+    "table": "sku_sale_attr_value",
+    "schema": [
+      {
+        "name": "id",
+        "type": "string?"
+      },
+      {
+        "name": "sku_id",
+        "type": "string?"
+      },
+      {
+        "name": "spu_id",
+        "type": "string?"
+      },
+      {
+        "name": "sale_attr_value_id",
+        "type": "string?"
+      },
+      {
+        "name": "sale_attr_value_name",
+        "type": "string?"
+      },
+      {
+        "name": "sale_attr_id",
+        "type": "string?"
+      },
+      {
+        "name": "sale_attr_name",
+        "type": "string?"
+      },
+      {
+        "name": "create_time",
+        "type": "string?"
+      },
+      {
+        "name": "operate_time",
+        "type": "string?"
+      }
+    ]
+  }
+}

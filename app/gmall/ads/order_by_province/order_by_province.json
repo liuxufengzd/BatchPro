@@ -1,0 +1,46 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "order_by_province",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_province_order_1d",
+      "columns": [
+        "province_id",
+        "province_name",
+        "area_code",
+        "iso_code",
+        "iso_3166_2",
+        "order_count_1d",
+        "order_original_amount_1d"
+      ]
+    },
+    {
+      "table": "trade_province_order_nd",
+      "columns": [
+        "province_id",
+        "province_name",
+        "area_code",
+        "iso_code",
+        "iso_3166_2",
+        "order_count_7d",
+        "order_original_amount_7d",
+        "order_count_30d",
+        "order_original_amount_30d"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "order_by_province"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "trade_trade_flow_acc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_trade_flow_acc",
+      "layer": "dwd",
+      "dates": [
+        "9999-12-31"
+      ],
+      "columns": [
+        "order_id",
+        "user_id",
+        "province_id",
+        "order_time",
+        "order_date_id",
+        "payment_time",
+        "finish_time",
+        "payment_date_id",
+        "finish_date_id",
+        "order_original_amount",
+        "order_activity_amount",
+        "order_coupon_amount",
+        "order_total_amount",
+        "payment_amount"
+      ]
+    },
+    {
+      "table": "order_info_inc",
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "payment_info_inc",
+      "columns": [
+        "type",
+        "data",
+        "old"
+      ]
+    },
+    {
+      "table": "order_status_log_inc",
+      "columns": [
+        "type",
+        "data"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_trade_flow_acc"
+  },
+  "sink": {
+    "partitionBy": "finish_date_id"
+  }
+}

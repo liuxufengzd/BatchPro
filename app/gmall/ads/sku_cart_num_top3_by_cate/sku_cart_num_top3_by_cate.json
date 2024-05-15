@@ -1,0 +1,43 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "sku_cart_num_top3_by_cate",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_cart_full",
+      "layer": "dwd",
+      "columns": [
+        "user_id",
+        "sku_id",
+        "sku_name",
+        "sku_num"
+      ]
+    },
+    {
+      "table": "sku_full",
+      "layer": "dim",
+      "columns": [
+        "id",
+        "category1_id",
+        "category1_name",
+        "category2_id",
+        "category2_name",
+        "category3_id",
+        "category3_name"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "sku_cart_num_top3_by_cate"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "order_refund_info_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "topic": "topic_db",
+    "table": "order_refund_info",
+    "schema": [
+      {
+        "name": "type",
+        "type": "string?"
+      },
+      {
+        "name": "ts",
+        "type": "long?"
+      },
+      {
+        "name": "data",
+        "type": "data_struct?"
+      },
+      {
+        "name": "old",
+        "type": "map<string,string>?"
+      }
+    ]
+  },
+  "structs": [
+    {
+      "name": "data_struct",
+      "schema": [
+        {
+          "name": "id",
+          "type": "string?"
+        },
+        {
+          "name": "user_id",
+          "type": "string?"
+        },
+        {
+          "name": "order_id",
+          "type": "string?"
+        },
+        {
+          "name": "sku_id",
+          "type": "string?"
+        },
+        {
+          "name": "refund_type",
+          "type": "string?"
+        },
+        {
+          "name": "refund_num",
+          "type": "long?"
+        },
+        {
+          "name": "refund_amount",
+          "type": "double?"
+        },
+        {
+          "name": "refund_reason_type",
+          "type": "string?"
+        },
+        {
+          "name": "refund_reason_txt",
+          "type": "string?"
+        },
+        {
+          "name": "refund_status",
+          "type": "string?"
+        },
+        {
+          "name": "create_time",
+          "type": "string?"
+        },
+        {
+          "name": "operate_time",
+          "type": "string?"
+        }
+      ]
+    }
+  ]
+}

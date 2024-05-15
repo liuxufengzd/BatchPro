@@ -1,0 +1,66 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "sku_info_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "database": "gmall",
+    "table": "sku_info",
+    "schema": [
+      {
+        "name": "id",
+        "type": "string?"
+      },
+      {
+        "name": "spu_id",
+        "type": "string?"
+      },
+      {
+        "name": "price",
+        "type": "double?"
+      },
+      {
+        "name": "sku_name",
+        "type": "string?"
+      },
+      {
+        "name": "sku_desc",
+        "type": "string?"
+      },
+      {
+        "name": "weight",
+        "type": "double?"
+      },
+      {
+        "name": "tm_id",
+        "type": "string?"
+      },
+      {
+        "name": "category3_id",
+        "type": "string?"
+      },
+      {
+        "name": "sku_default_img",
+        "type": "string?"
+      },
+      {
+        "name": "is_sale",
+        "type": "string?"
+      },
+      {
+        "name": "create_time",
+        "type": "string?"
+      },
+      {
+        "name": "operate_time",
+        "type": "string?"
+      }
+    ]
+  }
+}

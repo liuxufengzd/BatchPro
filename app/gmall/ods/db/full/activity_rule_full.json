@@ -1,0 +1,58 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "activity_rule_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "database": "gmall",
+    "table": "activity_rule",
+    "schema": [
+      {
+        "name": "id",
+        "type": "string?"
+      },
+      {
+        "name": "activity_id",
+        "type": "string?"
+      },
+      {
+        "name": "activity_type",
+        "type": "string?"
+      },
+      {
+        "name": "condition_amount",
+        "type": "double?"
+      },
+      {
+        "name": "condition_num",
+        "type": "long?"
+      },
+      {
+        "name": "benefit_amount",
+        "type": "double?"
+      },
+      {
+        "name": "benefit_discount",
+        "type": "double?"
+      },
+      {
+        "name": "benefit_level",
+        "type": "string?"
+      },
+      {
+        "name": "create_time",
+        "type": "string?"
+      },
+      {
+        "name": "operate_time",
+        "type": "string?"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "trade_cart_add_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "cart_info_inc",
+      "columns": [
+        "type",
+        "data",
+        "old"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_cart_add_inc"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

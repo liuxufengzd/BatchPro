@@ -1,0 +1,86 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "coupon_info_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "database": "gmall",
+    "table": "coupon_info",
+    "schema": [
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "coupon_name",
+        "type": "string"
+      },
+      {
+        "name": "coupon_type",
+        "type": "string"
+      },
+      {
+        "name": "condition_amount",
+        "type": "double?"
+      },
+      {
+        "name": "condition_num",
+        "type": "long?"
+      },
+      {
+        "name": "activity_id",
+        "type": "string?"
+      },
+      {
+        "name": "benefit_amount",
+        "type": "double?"
+      },
+      {
+        "name": "benefit_discount",
+        "type": "double?"
+      },
+      {
+        "name": "create_time",
+        "type": "string?"
+      },
+      {
+        "name": "range_type",
+        "type": "string?"
+      },
+      {
+        "name": "limit_num",
+        "type": "long?"
+      },
+      {
+        "name": "taken_count",
+        "type": "long?"
+      },
+      {
+        "name": "start_time",
+        "type": "string?"
+      },
+      {
+        "name": "end_time",
+        "type": "string?"
+      },
+      {
+        "name": "operate_time",
+        "type": "string?"
+      },
+      {
+        "name": "expire_time",
+        "type": "string?"
+      },
+      {
+        "name": "range_desc",
+        "type": "string?"
+      }
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dim",
+    "table": "sku_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "sku_info_full",
+      "columns": [
+        "id",
+        "sku_name",
+        "sku_desc",
+        "weight",
+        "is_sale",
+        "price",
+        "spu_id",
+        "tm_id",
+        "category3_id",
+        "create_time"
+      ]
+    },
+    {
+      "table": "spu_info_full",
+      "columns": [
+        "id",
+        "spu_name"
+      ]
+    },
+    {
+      "table": "base_trademark_full",
+      "columns": [
+        "id",
+        "tm_name"
+      ]
+    },
+    {
+      "table": "base_category3_full",
+      "columns": [
+        "id",
+        "name",
+        "category2_id"
+      ]
+    },
+    {
+      "table": "base_category2_full",
+      "columns": [
+        "id",
+        "name",
+        "category1_id"
+      ]
+    },
+    {
+      "table": "base_category1_full",
+      "columns": [
+        "id",
+        "name"
+      ]
+    },
+    {
+      "table": "sku_attr_value_full",
+      "columns": [
+        "sku_id",
+        "attr_id",
+        "value_id",
+        "attr_name",
+        "value_name"
+      ]
+    },
+    {
+      "table": "sku_sale_attr_value_full",
+      "columns": [
+        "sku_id",
+        "sale_attr_value_id",
+        "sale_attr_id",
+        "sale_attr_value_name",
+        "sale_attr_name"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "sku_full"
+  }
+}

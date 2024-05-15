@@ -1,0 +1,50 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "activity_info_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "database": "gmall",
+    "table": "activity_info",
+    "schema": [
+      {
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "name": "activity_name",
+        "type": "string?"
+      },
+      {
+        "name": "activity_type",
+        "type": "string?"
+      },
+      {
+        "name": "activity_desc",
+        "type": "string?"
+      },
+      {
+        "name": "start_time",
+        "type": "string?"
+      },
+      {
+        "name": "end_time",
+        "type": "string?"
+      },
+      {
+        "name": "create_time",
+        "type": "string?"
+      },
+      {
+        "name": "operate_time",
+        "type": "string?"
+      }
+    ]
+  }
+}

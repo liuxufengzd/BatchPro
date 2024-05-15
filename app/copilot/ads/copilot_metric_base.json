@@ -1,0 +1,38 @@
+{
+  "env": {
+    "app": "office",
+    "layer": "ads",
+    "table": "copilot_metric_base",
+    "scheduler": {
+      "startTime": "2024-03-20",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "copilot_nd",
+      "columns": [
+        "Date",
+        "Application",
+        "TenantId",
+        "FeatureActionType",
+        "ActionCount_1d",
+        "ActionCount_7d",
+        "ActionCount_30d",
+        "UserCount_1d",
+        "UserCount_7d",
+        "UserCount_30d",
+        "DeviceCount_1d",
+        "DeviceCount_7d",
+        "DeviceCount_30d"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "copilot_metric_base"
+  },
+  "sink": {
+    "partitionBy": "Date"
+  }
+}

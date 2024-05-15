@@ -1,0 +1,34 @@
+{
+  "env": {
+    "app": "office",
+    "layer": "dws",
+    "table": "copilot_td"
+  },
+  "sources": [
+    {
+      "table": "copilot_1d",
+      "layer": "dws",
+      "dates": [
+        "2024-03-20"
+      ],
+      "columns": [
+        "Date",
+        "Application",
+        "Platform",
+        "OsName",
+        "FeatureName",
+        "CountryCode",
+        "FeatureActionType",
+        "UserId",
+        "TenantId",
+        "ActionCount_1d"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "dws_copilot_td_init"
+  },
+  "sink": {
+    "partitionBy": "Date"
+  }
+}

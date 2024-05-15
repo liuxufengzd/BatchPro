@@ -1,0 +1,35 @@
+{
+  "env": {
+    "app": "office",
+    "layer": "dws",
+    "table": "copilot_nd",
+    "scheduler": {
+      "startTime": "2024-03-20",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "copilot_1d",
+      "layer": "dws",
+      "range": "[-29,0]",
+      "columns": [
+        "Date",
+        "Application",
+        "FeatureActionType",
+        "TenantId",
+        "UserId",
+        "DeviceId",
+        "ActionCount_1d"
+      ],
+      "variable": "copilot_all"
+    }
+  ],
+  "transform": {
+    "sql": "dws_copilot_nd"
+  },
+  "sink": {
+    "partitionBy": "Date"
+  }
+}

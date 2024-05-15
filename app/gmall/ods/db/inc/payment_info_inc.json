@@ -1,0 +1,93 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "payment_info_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "topic": "topic_db",
+    "table": "payment_info",
+    "schema": [
+      {
+        "name": "type",
+        "type": "string?"
+      },
+      {
+        "name": "ts",
+        "type": "long?"
+      },
+      {
+        "name": "data",
+        "type": "data_struct?"
+      },
+      {
+        "name": "old",
+        "type": "map<string,string>?"
+      }
+    ]
+  },
+  "structs": [
+    {
+      "name": "data_struct",
+      "schema": [
+        {
+          "name": "id",
+          "type": "string?"
+        },
+        {
+          "name": "out_trade_no",
+          "type": "string?"
+        },
+        {
+          "name": "order_id",
+          "type": "string?"
+        },
+        {
+          "name": "user_id",
+          "type": "string?"
+        },
+        {
+          "name": "payment_type",
+          "type": "string?"
+        },
+        {
+          "name": "trade_no",
+          "type": "string?"
+        },
+        {
+          "name": "total_amount",
+          "type": "double?"
+        },
+        {
+          "name": "subject",
+          "type": "string?"
+        },
+        {
+          "name": "payment_status",
+          "type": "string?"
+        },
+        {
+          "name": "create_time",
+          "type": "string?"
+        },
+        {
+          "name": "callback_time",
+          "type": "string?"
+        },
+        {
+          "name": "callback_content",
+          "type": "string?"
+        },
+        {
+          "name": "operate_time",
+          "type": "string?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dws",
+    "table": "trade_province_order_1d",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_order_detail_inc",
+      "columns": [
+        "province_id",
+        "user_id",
+        "order_id",
+        "sku_num",
+        "split_original_amount",
+        "split_activity_amount",
+        "split_coupon_amount",
+        "split_total_amount",
+        "date_id"
+      ]
+    },
+    {
+      "table": "province_full",
+      "layer": "dim",
+      "columns": [
+        "id",
+        "name",
+        "area_code",
+        "iso_code",
+        "iso_3166_2"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_province_order_1d"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

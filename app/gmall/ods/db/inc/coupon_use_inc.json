@@ -1,0 +1,85 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "coupon_use_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "topic": "topic_db",
+    "table": "coupon_use",
+    "schema": [
+      {
+        "name": "type",
+        "type": "string?"
+      },
+      {
+        "name": "ts",
+        "type": "long?"
+      },
+      {
+        "name": "data",
+        "type": "data_struct?"
+      },
+      {
+        "name": "old",
+        "type": "map<string,string>?"
+      }
+    ]
+  },
+  "structs": [
+    {
+      "name": "data_struct",
+      "schema": [
+        {
+          "name": "id",
+          "type": "string?"
+        },
+        {
+          "name": "coupon_id",
+          "type": "string?"
+        },
+        {
+          "name": "user_id",
+          "type": "string?"
+        },
+        {
+          "name": "order_id",
+          "type": "string?"
+        },
+        {
+          "name": "coupon_status",
+          "type": "string?"
+        },
+        {
+          "name": "get_time",
+          "type": "string?"
+        },
+        {
+          "name": "using_time",
+          "type": "string?"
+        },
+        {
+          "name": "used_time",
+          "type": "string?"
+        },
+        {
+          "name": "expire_time",
+          "type": "string?"
+        },
+        {
+          "name": "create_time",
+          "type": "string?"
+        },
+        {
+          "name": "operate_time",
+          "type": "string?"
+        }
+      ]
+    }
+  ]
+}

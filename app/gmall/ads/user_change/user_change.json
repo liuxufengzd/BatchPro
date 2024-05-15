@@ -1,0 +1,37 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "user_change",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "user_user_login_td",
+      "range": "[-1,-1]",
+      "variable": "user_login_pre",
+      "columns": [
+        "user_id",
+        "login_time_last"
+      ]
+    },
+    {
+      "table": "user_user_login_td",
+      "variable": "user_login",
+      "columns": [
+        "user_id",
+        "login_time_last"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "user_change"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

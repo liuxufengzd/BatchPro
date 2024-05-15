@@ -1,0 +1,27 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "new_order_user_stats",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_user_order_td",
+      "range": "[-29,0]",
+      "columns": [
+        "order_date_first"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "new_order_user_stats"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

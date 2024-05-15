@@ -1,0 +1,31 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "sku_favor_count_top3_by_tm",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "interaction_sku_favor_add_1d",
+      "layer": "dws",
+      "columns": [
+        "tm_id",
+        "tm_name",
+        "sku_id",
+        "sku_name",
+        "favor_count_1d"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "sku_favor_count_top3_by_tm"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

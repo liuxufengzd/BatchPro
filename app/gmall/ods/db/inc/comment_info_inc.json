@@ -1,0 +1,85 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "comment_info_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "topic": "topic_db",
+    "table": "comment_info",
+    "schema": [
+      {
+        "name": "type",
+        "type": "string?"
+      },
+      {
+        "name": "ts",
+        "type": "long?"
+      },
+      {
+        "name": "data",
+        "type": "data_struct?"
+      },
+      {
+        "name": "old",
+        "type": "map<string,string>?"
+      }
+    ]
+  },
+  "structs": [
+    {
+      "name": "data_struct",
+      "schema": [
+        {
+          "name": "id",
+          "type": "string?"
+        },
+        {
+          "name": "user_id",
+          "type": "string?"
+        },
+        {
+          "name": "nick_name",
+          "type": "string?"
+        },
+        {
+          "name": "head_img",
+          "type": "string?"
+        },
+        {
+          "name": "sku_id",
+          "type": "string?"
+        },
+        {
+          "name": "spu_id",
+          "type": "string?"
+        },
+        {
+          "name": "order_id",
+          "type": "string?"
+        },
+        {
+          "name": "appraise",
+          "type": "string?"
+        },
+        {
+          "name": "comment_txt",
+          "type": "string?"
+        },
+        {
+          "name": "create_time",
+          "type": "string?"
+        },
+        {
+          "name": "operate_time",
+          "type": "string?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "env": {
+    "app": "office",
+    "layer": "dwd",
+    "table": "copilot",
+    "scheduler": {
+      "startTime": "2024-03-20",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "copilot",
+      "columns": [
+        "Time",
+        "Application",
+        "UserId",
+        "TenantId",
+        "Platform",
+        "OsName",
+        "OlsLicenseId",
+        "DeviceId",
+        "FeatureName",
+        "FeatureCategory",
+        "FeatureActionType",
+        "SessionId",
+        "CountryCode",
+        "Language"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "dwd_copilot"
+  },
+  "sink": {
+    "partitionBy": "Date"
+  }
+}

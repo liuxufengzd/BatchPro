@@ -1,0 +1,44 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dws",
+    "table": "interaction_sku_favor_add_1d",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "interaction_favor_add_inc",
+      "columns": [
+        "sku_id",
+        "user_id",
+        "date_id"
+      ]
+    },
+    {
+      "table": "sku_full",
+      "layer": "dim",
+      "columns": [
+        "id",
+        "name",
+        "tm_id",
+        "tm_name",
+        "category1_id",
+        "category1_name",
+        "category2_id",
+        "category2_name",
+        "category3_id",
+        "category3_name"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "interaction_sku_favor_add_1d"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

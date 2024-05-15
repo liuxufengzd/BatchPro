@@ -1,0 +1,69 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "favor_info_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "topic": "topic_db",
+    "table": "favor_info",
+    "schema": [
+      {
+        "name": "type",
+        "type": "string?"
+      },
+      {
+        "name": "ts",
+        "type": "long?"
+      },
+      {
+        "name": "data",
+        "type": "data_struct?"
+      },
+      {
+        "name": "old",
+        "type": "map<string,string>?"
+      }
+    ]
+  },
+  "structs": [
+    {
+      "name": "data_struct",
+      "schema": [
+        {
+          "name": "id",
+          "type": "string?"
+        },
+        {
+          "name": "user_id",
+          "type": "string?"
+        },
+        {
+          "name": "sku_id",
+          "type": "string?"
+        },
+        {
+          "name": "spu_id",
+          "type": "string?"
+        },
+        {
+          "name": "is_cancel",
+          "type": "string?"
+        },
+        {
+          "name": "create_time",
+          "type": "string?"
+        },
+        {
+          "name": "operate_time",
+          "type": "string?"
+        }
+      ]
+    }
+  ]
+}

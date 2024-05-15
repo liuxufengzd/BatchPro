@@ -1,0 +1,30 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "page_path",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "traffic_page_view_inc",
+      "layer": "dwd",
+      "columns": [
+        "last_page_id",
+        "page_id",
+        "session_id",
+        "view_time"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "page_path"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

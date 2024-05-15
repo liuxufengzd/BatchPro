@@ -1,0 +1,37 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dws",
+    "table": "trade_user_payment_1d",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_pay_detail_suc_inc",
+      "columns":[
+        "user_id",
+        "order_id",
+        "province_id",
+        "payment_type_code",
+        "payment_type_name",
+        "sku_id",
+        "sku_num",
+        "split_original_amount",
+        "split_activity_amount",
+        "split_coupon_amount",
+        "split_payment_amount",
+        "date_id"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_user_payment_1d"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

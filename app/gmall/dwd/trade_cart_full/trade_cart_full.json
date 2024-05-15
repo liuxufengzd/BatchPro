@@ -1,0 +1,28 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "trade_cart_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "cart_info_full",
+      "columns": [
+        "id",
+        "user_id",
+        "sku_id",
+        "sku_name",
+        "sku_num",
+        "is_ordered"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_cart_full"
+  }
+}

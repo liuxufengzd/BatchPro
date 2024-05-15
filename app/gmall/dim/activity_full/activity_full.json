@@ -1,0 +1,51 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dim",
+    "table": "activity_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "activity_info_full",
+      "columns": [
+        "id",
+        "activity_name",
+        "activity_type",
+        "activity_desc",
+        "start_time",
+        "end_time",
+        "create_time"
+      ]
+    },
+    {
+      "table": "activity_rule_full",
+      "columns": [
+        "activity_id",
+        "condition_amount",
+        "condition_num",
+        "benefit_amount",
+        "benefit_discount",
+        "benefit_level"
+      ]
+    },
+    {
+      "table": "base_dic_full",
+      "columns": [
+        "dic_code",
+        "dic_name",
+        "parent_code"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "activity_full",
+    "udf": [
+      "get_activity_benefit_rule"
+    ]
+  }
+}

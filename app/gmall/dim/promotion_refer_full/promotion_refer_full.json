@@ -1,0 +1,26 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dim",
+    "table": "promotion_refer_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "promotion_refer_full",
+      "columns": [
+        "id",
+        "refer_name",
+        "create_time",
+        "operate_time"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "promotion_refer_full"
+  }
+}

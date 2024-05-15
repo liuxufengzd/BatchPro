@@ -1,0 +1,38 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "base_dic_full",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "database": "gmall",
+    "table": "base_dic",
+    "schema": [
+      {
+        "name": "dic_code",
+        "type": "string?"
+      },
+      {
+        "name": "dic_name",
+        "type": "string?"
+      },
+      {
+        "name": "parent_code",
+        "type": "string?"
+      },
+      {
+        "name": "create_time",
+        "type": "string?"
+      },
+      {
+        "name": "operate_time",
+        "type": "string?"
+      }
+    ]
+  }
+}

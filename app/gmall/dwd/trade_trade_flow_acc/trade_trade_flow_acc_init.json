@@ -1,0 +1,45 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "trade_trade_flow_acc"
+  },
+  "sources": [
+    {
+      "table": "order_info_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "payment_info_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "order_status_log_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "type",
+        "data"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_trade_flow_acc_init"
+  },
+  "sink": {
+    "partitionBy": "finish_date_id"
+  }
+}

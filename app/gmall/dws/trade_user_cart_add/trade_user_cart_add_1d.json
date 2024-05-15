@@ -1,0 +1,31 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dws",
+    "table": "trade_user_cart_add_1d",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_cart_add_inc",
+      "columns": [
+        "user_id",
+        "order_id",
+        "sku_id",
+        "sku_name",
+        "sku_num",
+        "date_id"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_user_cart_add_1d"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

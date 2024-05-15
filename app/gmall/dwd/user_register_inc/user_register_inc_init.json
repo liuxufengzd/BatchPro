@@ -1,0 +1,35 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "user_register_inc"
+  },
+  "sources": [
+    {
+      "table": "log_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "common",
+        "page"
+      ]
+    },
+    {
+      "table": "user_info_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "data",
+        "type"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "user_register_inc_init"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

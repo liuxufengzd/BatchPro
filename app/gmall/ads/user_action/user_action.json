@@ -1,0 +1,45 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "user_action",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "traffic_visitor_page_view_1d",
+      "columns": [
+        "visitor_id",
+        "page_id"
+      ]
+    },
+    {
+      "table": "trade_user_cart_add_1d",
+      "columns": [
+        "user_id"
+      ]
+    },
+    {
+      "table": "trade_user_sku_order_1d",
+      "columns": [
+        "user_id"
+      ]
+    },
+    {
+      "table": "trade_user_payment_1d",
+      "columns": [
+        "user_id"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "user_action"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

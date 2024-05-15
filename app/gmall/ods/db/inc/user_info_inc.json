@@ -1,0 +1,97 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ods",
+    "table": "user_info_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "topic": "topic_db",
+    "table": "user_info",
+    "schema": [
+      {
+        "name": "type",
+        "type": "string?"
+      },
+      {
+        "name": "ts",
+        "type": "long?"
+      },
+      {
+        "name": "data",
+        "type": "data_struct?"
+      },
+      {
+        "name": "old",
+        "type": "map<string,string>?"
+      }
+    ]
+  },
+  "structs": [
+    {
+      "name": "data_struct",
+      "schema": [
+        {
+          "name": "id",
+          "type": "string?"
+        },
+        {
+          "name": "login_name",
+          "type": "string?"
+        },
+        {
+          "name": "nick_name",
+          "type": "string?"
+        },
+        {
+          "name": "passwd",
+          "type": "string?"
+        },
+        {
+          "name": "name",
+          "type": "string?"
+        },
+        {
+          "name": "phone_num",
+          "type": "string?"
+        },
+        {
+          "name": "email",
+          "type": "string?"
+        },
+        {
+          "name": "head_img",
+          "type": "string?"
+        },
+        {
+          "name": "user_level",
+          "type": "string?"
+        },
+        {
+          "name": "birthday",
+          "type": "string?"
+        },
+        {
+          "name": "gender",
+          "type": "string?"
+        },
+        {
+          "name": "create_time",
+          "type": "string?"
+        },
+        {
+          "name": "operate_time",
+          "type": "string?"
+        },
+        {
+          "name": "status",
+          "type": "string?"
+        }
+      ]
+    }
+  ]
+}

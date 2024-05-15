@@ -1,0 +1,36 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dws",
+    "table": "user_user_login_td"
+  },
+  "sources": [
+    {
+      "table": "user_login_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "user_id",
+        "login_time"
+      ]
+    },
+    {
+      "table": "user_zip",
+      "layer": "dim",
+      "dates": [
+        "9999-12-31"
+      ],
+      "columns": [
+        "id",
+        "create_time"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "user_user_login_td_init"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

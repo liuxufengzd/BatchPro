@@ -1,0 +1,25 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "interaction_favor_add_inc"
+  },
+  "sources": [
+    {
+      "table": "favor_info_inc",
+      "dates": [
+        "2022-06-08"
+      ],
+      "columns": [
+        "type",
+        "data"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "interaction_favor_add_inc_init"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

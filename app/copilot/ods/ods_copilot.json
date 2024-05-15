@@ -1,0 +1,73 @@
+{
+  "env": {
+    "app": "office",
+    "layer": "ods",
+    "table": "copilot",
+    "scheduler": {
+      "startTime": "2024-03-20",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "source": {
+    "topic": "topic_log_copilot",
+    "schema": [
+      {
+        "name": "Time",
+        "type": "timestamp?"
+      },
+      {
+        "name": "Application",
+        "type": "string?"
+      },
+      {
+        "name": "UserId",
+        "type": "string?"
+      },
+      {
+        "name": "TenantId",
+        "type": "string?"
+      },
+      {
+        "name": "Platform",
+        "type": "string?"
+      },
+      {
+        "name": "OsName",
+        "type": "string?"
+      },
+      {
+        "name": "OlsLicenseId",
+        "type": "string?"
+      },
+      {
+        "name": "DeviceId",
+        "type": "string?"
+      },
+      {
+        "name": "FeatureName",
+        "type": "string?"
+      },
+      {
+        "name": "FeatureCategory",
+        "type": "string?"
+      },
+      {
+        "name": "FeatureActionType",
+        "type": "string?"
+      },
+      {
+        "name": "SessionId",
+        "type": "string?"
+      },
+      {
+        "name": "CountryCode",
+        "type": "string?"
+      },
+      {
+        "name": "Language",
+        "type": "string?"
+      }
+    ]
+  }
+}

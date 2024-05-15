@@ -1,0 +1,39 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dws",
+    "table": "tool_user_coupon_used_1d",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "tool_coupon_used_inc",
+      "columns": [
+        "coupon_id",
+        "user_id",
+        "date_id"
+      ]
+    },
+    {
+      "table": "coupon_full",
+      "layer": "dim",
+      "columns": [
+        "id",
+        "coupon_name",
+        "coupon_type",
+        "coupon_type_name",
+        "benefit_rule"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "tool_user_coupon_used_1d"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

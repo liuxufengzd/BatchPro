@@ -1,0 +1,35 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dws",
+    "table": "traffic_session_page_view_1d",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "traffic_page_view_inc",
+      "columns": [
+        "session_id",
+        "page_id",
+        "brand",
+        "channel",
+        "model",
+        "mid_id",
+        "operate_system",
+        "version_code",
+        "during_time",
+        "date_id"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "traffic_session_page_view_1d"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "user_register_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "log_inc",
+      "columns": [
+        "common",
+        "page"
+      ]
+    },
+    {
+      "table": "user_info_inc",
+      "columns": [
+        "data",
+        "type"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "user_register_inc"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

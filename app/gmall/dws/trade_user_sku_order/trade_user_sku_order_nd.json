@@ -1,0 +1,42 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dws",
+    "table": "trade_user_sku_order_nd",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_user_sku_order_1d",
+      "layer": "dws",
+      "range": "[-29,0]",
+      "columns": [
+        "user_id",
+        "sku_id",
+        "sku_name",
+        "tm_id",
+        "tm_name",
+        "category1_id",
+        "category1_name",
+        "category2_id",
+        "category2_name",
+        "category3_id",
+        "category3_name",
+        "order_count_1d",
+        "order_num_1d",
+        "order_original_amount_1d",
+        "activity_reduce_amount_1d",
+        "coupon_reduce_amount_1d",
+        "order_total_amount_1d",
+        "date_id"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_user_sku_order_nd"
+  }
+}

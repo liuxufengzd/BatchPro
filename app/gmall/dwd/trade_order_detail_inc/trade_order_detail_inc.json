@@ -1,0 +1,48 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "dwd",
+    "table": "trade_order_detail_inc",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "order_detail_inc",
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "order_info_inc",
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "order_detail_activity_inc",
+      "columns": [
+        "type",
+        "data"
+      ]
+    },
+    {
+      "table": "order_detail_coupon_inc",
+      "columns": [
+        "type",
+        "data"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "trade_order_detail_inc"
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}

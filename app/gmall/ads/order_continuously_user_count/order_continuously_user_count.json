@@ -1,0 +1,32 @@
+{
+  "env": {
+    "app": "gmall",
+    "layer": "ads",
+    "table": "order_continuously_user_count",
+    "scheduler": {
+      "startTime": "2022-06-08",
+      "frequency": "Day",
+      "delay": 1
+    }
+  },
+  "sources": [
+    {
+      "table": "trade_user_sku_order_1d",
+      "variable": "trade_user_sku_order",
+      "range": "[-6,0]",
+      "columns": [
+        "user_id",
+        "date_id"
+      ]
+    }
+  ],
+  "transform": {
+    "sql": "order_continuously_user_count",
+    "udf": [
+      "has_continue_dates"
+    ]
+  },
+  "sink": {
+    "partitionBy": "date_id"
+  }
+}
